@@ -19,7 +19,7 @@ class SeleniumGenericTests(unittest.TestCase):
     # https://github.com/tourdedave/elemental-selenium-tips/blob/master/05-select-from-a-dropdown/python/dropdown.py
     def test_select_from_a_dropdown(self):
         driver = self.driver
-        driver.get('http://the-internet.herokuapp.com/dropdown')
+        driver.get('https://the-internet.herokuapp.com/dropdown')
         dropdown_list = driver.find_element_by_id('dropdown')
         options = dropdown_list.find_elements_by_tag_name('option')
         for opt in options:
@@ -35,7 +35,7 @@ class SeleniumGenericTests(unittest.TestCase):
     # https://github.com/tourdedave/elemental-selenium-tips/blob/master/13-work-with-basic-auth/python/basic_auth_1.py
     def test_visit_basic_auth_secured_page(self):
         driver = self.driver
-        driver.get('http://admin:admin@the-internet.herokuapp.com/basic_auth')
+        driver.get('https://admin:admin@the-internet.herokuapp.com/basic_auth')
         page_message = driver.find_element_by_css_selector('.example p').text
         self.assertTrue(page_message == 'Congratulations! You must have the proper credentials.')
 
